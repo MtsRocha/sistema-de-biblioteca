@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="SistemaBiblioteca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="675.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="controller.ControllerPrincipal">
+  <tabs>
+    <Tab fx:id="tabCad" text="Cadastro">
+      <content>
+        <AnchorPane minHeight="250.0" minWidth="544.0" prefHeight="250.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="txtTitulo" layoutX="233.0" layoutY="73.0" prefHeight="30.0" prefWidth="246.0" />
+                  <Label fx:id="lbTitulo" layoutX="133.0" layoutY="74.0" text="Titulo:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="173.0" layoutY="8.0" text="Sistema de Biblioteca" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbISBN" layoutX="139.0" layoutY="128.0" text="ISBN:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtIsbn" layoutX="233.0" layoutY="127.0" prefHeight="9.0" prefWidth="246.0" />
+                  <Label fx:id="lbEdi" layoutX="132.0" layoutY="183.0" text="Edição:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtEdicao" layoutX="233.0" layoutY="182.0" prefHeight="30.0" prefWidth="246.0" />
+                  <Label fx:id="lbAutor" layoutX="136.0" layoutY="236.0" text="Autor:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txtDesc" layoutX="235.0" layoutY="286.0" prefHeight="59.0" prefWidth="243.0" />
+                  <TextField fx:id="txtAutor" layoutX="234.0" layoutY="235.0" prefHeight="30.0" prefWidth="245.0" />
+                  <Label fx:id="lbDesc" layoutX="120.0" layoutY="296.0" text="Descrição:" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnSalvar" layoutX="310" layoutY="368.0" mnemonicParsing="false" onAction="#handlerSalvar" text="Salvar" />
+                  <Button fx:id="btnAtualizar" layoutX="370" layoutY="368.0" mnemonicParsing="false" onAction="#handlerAtualizar" text="Atualizar" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Busca">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="250.0" layoutY="27.0" text="Busque o seu livro:" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbBuscaTitulo" layoutX="160.0" layoutY="78.0" text="Informe o título:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtBuscaTitulo" layoutX="325.0" layoutY="77.0" prefHeight="30.0" prefWidth="225.0" />
+                  <TableView fx:id="tabelaBusca" layoutX="-1.0" layoutY="150" prefHeight="240" prefWidth="682.0">
+                    <columns>
+                      <TableColumn fx:id="tcTitulo" prefWidth="132.0" text="Titulo " />
+                        <TableColumn fx:id="tsEdicao" prefWidth="129.0" text="Edição" />
+                        <TableColumn fx:id="tsAutor" prefWidth="137.0" text="Autor" />
+                        <TableColumn fx:id="tsDesc" prefWidth="135.0" text="Descrição" />
+                      <TableColumn fx:id="tcIsbn" minWidth="0.0" prefWidth="141.0" text="ISBN" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnBuscar" layoutX="308.0" layoutY="420" mnemonicParsing="false" onAction="#handlerBuscar" text="Buscar" />
+                  <Button fx:id="btnDeletar" layoutX="240" layoutY="420" mnemonicParsing="false" onAction="#handlerDeletar" text="Deletar" />
+                  <Button fx:id="btnEditar" layoutX="370" layoutY="420" mnemonicParsing="false" onAction="#handlerEditar" text="Editar" />
+                  </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
